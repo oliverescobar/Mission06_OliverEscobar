@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Joel Hilton - Movie Database";
+}
+@model Application
+
+<h1>Input a Movie! </h1>
+<div> 
+    <form method="post">
+        <label asp-for="Title">What is the Title</label><br />
+        <input asp-for="Title"/><br /><br />
+
+        <label asp-for="Category">What is the Category?</label>
+        <br /><input asp-for="Category"/><br /><br />
+
+        <label asp-for="Director">Who is the Director?</label>
+        <br /><input asp-for="Director"/><br /><br />
+
+        <label asp-for="Year">What year did it come out?</label>
+        <br /><input asp-for="Year" /><br /><br />
+
+        <label asp-for="Rating">What is the rating?</label>
+        <br />
+        <select asp-for="Rating">
+            <option value="G">G</option>
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="R">R</option>
+        </select><br /><br />
+
+        <label asp-for="Edited">Has the movie been edited?</label>
+        <br />
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select><br /><br />
+
+        <label asp-for="Lent">Has this movie been lent?</label>
+        <br /><input asp-for="Lent" /><br /><br />
+
+        <label asp-for="Notes">Notes about the movie:</label>
+        <br /><input asp-for="Notes" /><br /><br />
+
+        <button type="submit">Submit Movie!</button>
+    </form>
+</div>
