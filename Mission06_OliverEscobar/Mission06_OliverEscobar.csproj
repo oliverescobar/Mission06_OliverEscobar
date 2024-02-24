@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="JoelHiltonMovieCollection.sqlite" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\Joel.png" />
   </ItemGroup>
 

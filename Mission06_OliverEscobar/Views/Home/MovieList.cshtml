@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "The Joel Hilton Film Collection";
+}
+@model List<Application>
+
+<table>
+    <thead class="fw-bold">
+        <tr>
+            <td>Movie ID</td>
+            <td>Title</td>
+            <td>Category</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td>Year</td>
+            <td>Edited</td>
+            <td>Lent</td>
+            <td>Notes</td>
+        </tr>
+    </thead>
+
+    @foreach (var x in Model)
+    {
+        <tbody>
+            <tr>
+                <td>@x.MovieId</td>
+                <td>@x.Title</td>
+                <td>@x.CategoryName</td>
+                <td>@x.Director</td>
+                <td>@x.Rating</td>
+                <td>@x.Year</td>
+                <td>@x.Edited</td>
+                <td>@x.LentTo</td>
+                <td>@x.Notes</td>
+
+                <td><a class="btn btn-info" asp-controller="Home" asp-action="Edit" asp-route-id="@x.MovieId">Edit</a></td>
+                <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@x.MovieId">Delete</a></td>
+            </tr>
+        </tbody>
+
+    }
+</table>

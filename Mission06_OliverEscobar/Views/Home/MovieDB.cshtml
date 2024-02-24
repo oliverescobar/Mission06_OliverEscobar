@@ -6,11 +6,18 @@
 <h1>Input a Movie! </h1>
 <div> 
     <form method="post">
+        <input type="hidden" asp-for="MovieId" />
         <label asp-for="Title">What is the Title</label><br />
         <input asp-for="Title"/><br /><br />
-
-        <label asp-for="Category">What is the Category?</label>
-        <br /><input asp-for="Category"/><br /><br />
+ 
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Category)
+            {
+                <option value="@c.CategoryId">@c.CategoryName</option>
+            }
+        </select>
+        <br /><br />
 
         <label asp-for="Director">Who is the Director?</label>
         <br /><input asp-for="Director"/><br /><br />
@@ -34,8 +41,8 @@
             <option value="false">No</option>
         </select><br /><br />
 
-        <label asp-for="Lent">Has this movie been lent?</label>
-        <br /><input asp-for="Lent" /><br /><br />
+        <label asp-for="LentTo">Has this movie been lent?</label>
+        <br /><input asp-for="LentTo" /><br /><br />
 
         <label asp-for="Notes">Notes about the movie:</label>
         <br /><input asp-for="Notes" /><br /><br />
