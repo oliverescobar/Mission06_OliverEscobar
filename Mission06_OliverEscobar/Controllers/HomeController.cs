@@ -37,15 +37,25 @@ namespace Mission06_OliverEscobar.Controllers
             ViewBag.Categories = _context.Categories.ToList()
                 .OrderBy(x => x.CategoryName)
                 .ToList();
-            return View();
+            return View("MovieDB", new Application());
         }
 
         [HttpPost]
         public IActionResult MovieDB(Application response)
         {
-            _context.Movies.Add(response);
-            _context.SaveChanges();
-            return View("Confirmation", response);
+            if (ModelState.IsValid)
+            {
+                _context.Movies.Add(response);
+                _context.SaveChanges();
+                return View("Confirmation", response);
+            }
+            else
+            {
+                ViewBag.Categories = _context.Categories.ToList()
+                    .OrderBy(x => x.CategoryName)
+                    .ToList();
+                return View(response);
+            }
         }
 
 //        [HttpPost]

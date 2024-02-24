@@ -12,7 +12,7 @@
  
         <select asp-for="CategoryId">
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Category)
+            @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }
@@ -48,5 +48,7 @@
         <br /><input asp-for="Notes" /><br /><br />
 
         <button type="submit">Submit Movie!</button>
+
+        <div asp-validation-summary="All"></div>
     </form>
 </div>
